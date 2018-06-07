@@ -1,0 +1,7 @@
+# config/cucumber.yml
+##YAML Template
+---
+default: --format html --out reports/index.html --format pretty --profile smoke DRIVER=<%= ENV['DRIVER']%>
+smoke: --tags <%= ENV['FEATURE_TAGS'] || '@smoke' %>
+all: --format html --out reports/index.html --format pretty DRIVER=<%= ENV['DRIVER'] %> --tags ~@wip
+dev: --format html --out reports/index.html --format pretty DRIVER=<%= ENV['DRIVER'] %> --tags @dev
